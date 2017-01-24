@@ -19,6 +19,7 @@ Clone this repo.
 	git clone https://github.com/smossber/smart_proxy_dns_infoblox.git
 
 Build the gem
+
 	cd smart_proxy_dns_infoblox
 	gem build smart_proxy_dns_plugin.gemspec
 
@@ -41,6 +42,7 @@ To enable this DNS provider, edit `/etc/foreman-proxy/settings.d/dns.yml` and se
     :use_provider: dns_infoblox
 
 Configuration options for this plugin are in `/etc/foreman-proxy/settings.d/dns_infoblox.yml` and include:
+
 	---
 	:infoblox_user: "infoblox_user"
 	:infoblox_pw: "infoblox_user_pw"
