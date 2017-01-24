@@ -12,21 +12,23 @@ This fork resets the head to commit 0962, version 0.0.3 of the plugin, and adds 
 
 ## Installation
 
+Make sure that the infoblox gem is installed, as this is a dependency of this gem.
+
 Clone this repo.
 
-git clone
+	git clone https://github.com/smossber/smart_proxy_dns_infoblox.git
 
-build the gem
-
-gem build smart_proxy_dns_plugin.gemspec
+Build the gem
+	cd smart_proxy_dns_infoblox
+	gem build smart_proxy_dns_plugin.gemspec
 
 Install the Gem
 
-gem install smart_proxy_dns_plugin-0.0.3.gem
+	gem install smart_proxy_dns_plugin-0.0.3.gem
 
 Tell the smart proxy bundler to include the plugin
 
-echo ""
+	echo "gem 'smart_proxy_dns_infoblox'" > /usr/share/foreman-proxy/bundler.d/dns_infoblox.rb
 
 See [How_to_Install_a_Smart-Proxy_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Smart-Proxy_Plugin)
 for how to install Smart Proxy plugins
@@ -39,16 +41,19 @@ To enable this DNS provider, edit `/etc/foreman-proxy/settings.d/dns.yml` and se
     :use_provider: dns_infoblox
 
 Configuration options for this plugin are in `/etc/foreman-proxy/settings.d/dns_infoblox.yml` and include:
-
-* example_setting: change this as an example
-
+	---
+	:infoblox_user: "infoblox_user"
+	:infoblox_pw: "infoblox_user_pw"
+	:infoblox_host: "infoblox.example.com"
+	
+	
 ## Contributing
 
 Fork and send a Pull Request. Thanks!
 
 ## Copyright
 
-Copyright (c) *year* *your name*
+Copyright (c) 2017 *your name*
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
