@@ -13,7 +13,7 @@ module Proxy::Dns::Infoblox
       @infoblox_user = ::Proxy::Dns::Infoblox::Plugin.settings.infoblox_user
       @infoblox_pw   = ::Proxy::Dns::Infoblox::Plugin.settings.infoblox_pw
       @infoblox_host = ::Proxy::Dns::Infoblox::Plugin.settings.infoblox_host
-      @conn          = ::Infoblox::Connection.new(username: @infoblox_user ,password: @infoblox_pw, host: @infoblox_host)
+      @conn          = ::Infoblox::Connection.new(username: @infoblox_user ,password: @infoblox_pw, host: @infoblox_host,ssl_opts: {verify: false} )
       super(@infoblox_host, ::Proxy::Dns::Plugin.settings.dns_ttl)
     end
 

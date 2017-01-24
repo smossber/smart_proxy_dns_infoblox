@@ -2,14 +2,35 @@
 
 *Introduction here*
 
-This plugin adds a new DNS provider for managing records in MyService.
+
+Fork of smart_proxy_dns_infoblox plugin, configured to work with Satellite Capsule 6.2.6.
+Satellite Capsule 6.2 is based on the Smart Proxy 1.11, while the latest versions of this plugins are based on the 1.13 version.
+The changes in Smart Proxy 1.12 introduces a new way to load dependencies, breaking backward compatability.
+
+This fork resets the head to commit 0962, version 0.0.3 of the plugin, and adds ssl_opts { verify: false }to the @connection.
+
 
 ## Installation
+
+Clone this repo.
+
+git clone
+
+build the gem
+
+gem build smart_proxy_dns_plugin.gemspec
+
+Install the Gem
+
+gem install smart_proxy_dns_plugin-0.0.3.gem
+
+Tell the smart proxy bundler to include the plugin
+
+echo ""
 
 See [How_to_Install_a_Smart-Proxy_Plugin](http://projects.theforeman.org/projects/foreman/wiki/How_to_Install_a_Smart-Proxy_Plugin)
 for how to install Smart Proxy plugins
 
-This plugin is compatible with Smart Proxy 1.10 or higher.
 
 ## Configuration
 
